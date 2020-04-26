@@ -1,6 +1,12 @@
+import {Image, TouchableOpacity} from 'react-native';
+
 const options = {
   title: 'Discover',
-  headerTitleAlign: 'center',
+  headerTitleStyle: {
+    fontSize: 25,
+    letterSpacing: 0.8,
+  },
+  headerTitleAlign: 'left',
   headerTransparent: true,
 };
 
