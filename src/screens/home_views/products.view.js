@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 10,
     flexDirection: 'row',
+    marginTop: 20,
   },
   filters: {
     marginTop: 45,
@@ -57,7 +58,6 @@ const styles = StyleSheet.create({
   },
   products: {
     flex: 6,
-    height: 300,
   },
   filterText: {
     padding: 5,

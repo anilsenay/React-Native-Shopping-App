@@ -1,13 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
+import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import BrandsView from './brands.view';
 import ProductsView from './products.view';
+import MoreView from './more.view';
 
 const HomeView = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <BrandsView />
-      <ProductsView />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <BrandsView />
+        <ProductsView />
+        <MoreView />
+      </ScrollView>
     </SafeAreaView>
   );
 };

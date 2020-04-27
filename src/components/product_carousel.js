@@ -1,59 +1,121 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
+import RightArrow from '../assets/home/right-arrow.svg';
 
 const ProductCarousel = () => {
   const carouselItems = [
     {
-      title: 'Item 1',
-      text: 'Text 1',
+      brand: 'NIKE',
+      model: 'AIR-270',
+      price: '129.00 TL',
+      imageURL: require('../assets/products/nike/nike-zoom-red.png'),
+      backgroundColor: '#EAA190',
     },
     {
-      title: 'Item 2',
-      text: 'Text 2',
+      brand: 'NIKE',
+      model: 'EPIC-REACT',
+      price: '129.00 TL',
+      imageURL: require('../assets/products/nike/nike-zoom.png'),
+      backgroundColor: '#527AD1',
     },
     {
-      title: 'Item 3',
-      text: 'Text 3',
+      brand: 'NIKE',
+      model: 'AIR-MAX',
+      price: '129.00 TL',
+      imageURL: require('../assets/products/nike/nike-airmax-huarache.png'),
+      backgroundColor: '#01A7B1',
     },
     {
-      title: 'Item 4',
-      text: 'Text 4',
+      brand: 'NIKE',
+      model: 'EPIC-REACT',
+      price: '129.00 TL',
+      imageURL: require('../assets/products/nike/nike-airmax.png'),
+      backgroundColor: '#EAA190',
     },
     {
-      title: 'Item 5',
-      text: 'Text 5',
+      brand: 'NIKE',
+      model: 'AIR-MAX',
+      price: '129.00 TL',
+      imageURL: require('../assets/products/nike/nike-zoom-green.png'),
+      backgroundColor: '#01A7B1',
     },
   ];
 
   const renderItem = ({item, index}) => {
     return (
-      <View
-        style={{
-          backgroundColor: 'floralwhite',
-          borderRadius: 5,
-          height: 250,
-          padding: 50,
-          marginLeft: 25,
-          marginRight: 25,
-        }}>
-        <Text>{item.title}</Text>
+      <View style={[styles.card, {backgroundColor: item.backgroundColor}]}>
+        <Text style={styles.brandText}>{item.brand}</Text>
+        <Text style={styles.modelText}>{item.model}</Text>
+        <Text style={styles.priceText}>{item.price}</Text>
+        <Image style={styles.modelImage} source={item.imageURL} />
+        <RightArrow
+          width={25}
+          height={25}
+          fill="white"
+          style={styles.rightIcon}
+        />
       </View>
     );
   };
 
   return (
-    <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center'}}>
+    <View style={styles.container}>
       <Carousel
         layout={'default'}
         data={carouselItems}
         renderItem={renderItem}
-        sliderWidth={300}
-        itemWidth={250}
-
+        sliderWidth={250}
+        itemWidth={230}
       />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 10,
+    marginLeft: 4,
+  },
+  card: {
+    backgroundColor: 'floralwhite',
+    borderRadius: 20,
+    height: 280,
+    padding: 20,
+    marginRight: 30,
+  },
+  activeText: {
+    color: '#2B2B2B',
+  },
+  brandText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  modelText: {
+    color: 'white',
+    marginTop: 5,
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  priceText: {
+    color: 'white',
+    marginTop: 5,
+  },
+  modelImage: {
+    width: 250,
+    height: 250,
+    transform: [{rotate: '-28deg'}],
+    marginTop: -90,
+    marginLeft: -45,
+  },
+  rightIcon: {
+    alignSelf: 'flex-end',
+    marginTop: -16,
+    marginRight: 4,
+  },
+});
 
 export default ProductCarousel;
