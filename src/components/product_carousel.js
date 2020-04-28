@@ -1,11 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import RightArrow from '../assets/home/right-arrow.svg';
+import * as RootNavigation from '../navigation/root_navigation';
 
 const ProductCarousel = () => {
   const carouselItems = [
     {
+      id: 0,
       brand: 'NIKE',
       model: 'AIR-270',
       price: '129.00 TL',
@@ -13,6 +15,7 @@ const ProductCarousel = () => {
       backgroundColor: '#EAA190',
     },
     {
+      id: 1,
       brand: 'NIKE',
       model: 'EPIC-REACT',
       price: '129.00 TL',
@@ -20,6 +23,7 @@ const ProductCarousel = () => {
       backgroundColor: '#527AD1',
     },
     {
+      id: 2,
       brand: 'NIKE',
       model: 'AIR-MAX',
       price: '129.00 TL',
@@ -27,6 +31,7 @@ const ProductCarousel = () => {
       backgroundColor: '#01A7B1',
     },
     {
+      id: 3,
       brand: 'NIKE',
       model: 'EPIC-REACT',
       price: '129.00 TL',
@@ -34,6 +39,7 @@ const ProductCarousel = () => {
       backgroundColor: '#EAA190',
     },
     {
+      id: 4,
       brand: 'NIKE',
       model: 'AIR-MAX',
       price: '129.00 TL',
@@ -44,7 +50,11 @@ const ProductCarousel = () => {
 
   const renderItem = ({item, index}) => {
     return (
-      <View style={[styles.card, {backgroundColor: item.backgroundColor}]}>
+      <TouchableOpacity
+        style={[styles.card, {backgroundColor: item.backgroundColor}]}
+        onPress={() => {
+          RootNavigation.navigate('Product', {item});
+        }}>
         <Text style={styles.brandText}>{item.brand}</Text>
         <Text style={styles.modelText}>{item.model}</Text>
         <Text style={styles.priceText}>{item.price}</Text>
@@ -55,7 +65,7 @@ const ProductCarousel = () => {
           fill="white"
           style={styles.rightIcon}
         />
-      </View>
+      </TouchableOpacity>
     );
   };
 
