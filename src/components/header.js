@@ -1,13 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import ArrowIcon from '../assets/home/right-arrow.svg';
 import {FavoriteButton} from '../navigation/tabbar_icon';
+import * as RootNavigation from '../navigation/root_navigation';
 
 const Header = ({title}) => {
   return (
     <View style={styles.container}>
-      <ArrowIcon width={24} height={24} fill="white" style={styles.arrowIcon} />
-
+      <TouchableOpacity
+        style={styles.arrowIcon}
+        onPress={() => RootNavigation.pop(1)}>
+        <ArrowIcon width={24} height={24} fill="white" />
+      </TouchableOpacity>
       <Text style={styles.title}>{title}</Text>
       <FavoriteButton
         width={24}
@@ -35,8 +39,9 @@ const styles = StyleSheet.create({
   },
   arrowIcon: {
     position: 'absolute',
-    top: 20,
-    left: 10,
+    padding: 10,
+    top: 10,
+    left: 0,
     transform: [{rotate: '-180deg'}],
   },
   favoriteIcon: {

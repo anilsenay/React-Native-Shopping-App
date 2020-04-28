@@ -8,43 +8,48 @@ const ProductCarousel = () => {
   const carouselItems = [
     {
       id: 0,
-      brand: 'NIKE',
-      model: 'AIR-270',
+      brand: 'Nike',
+      model: 'Air-270',
       price: '129.00 TL',
       imageURL: require('../assets/products/nike/nike-zoom-red.png'),
       backgroundColor: '#EAA190',
+      sizes: [40, 42, 43, 45],
     },
     {
       id: 1,
-      brand: 'NIKE',
-      model: 'EPIC-REACT',
+      brand: 'Nike',
+      model: 'Epic-React',
       price: '129.00 TL',
       imageURL: require('../assets/products/nike/nike-zoom.png'),
       backgroundColor: '#527AD1',
+      sizes: [40, 42, 43, 45],
     },
     {
       id: 2,
-      brand: 'NIKE',
-      model: 'AIR-MAX',
+      brand: 'Nike',
+      model: 'Air-Max',
       price: '129.00 TL',
       imageURL: require('../assets/products/nike/nike-airmax-huarache.png'),
       backgroundColor: '#01A7B1',
+      sizes: [40, 42, 43, 45],
     },
     {
       id: 3,
-      brand: 'NIKE',
-      model: 'EPIC-REACT',
+      brand: 'Nike',
+      model: 'Epic-React',
       price: '129.00 TL',
       imageURL: require('../assets/products/nike/nike-airmax.png'),
       backgroundColor: '#EAA190',
+      sizes: [40, 42, 43, 45],
     },
     {
       id: 4,
-      brand: 'NIKE',
-      model: 'AIR-MAX',
+      brand: 'Nike',
+      model: 'Air-Max',
       price: '129.00 TL',
       imageURL: require('../assets/products/nike/nike-zoom-green.png'),
       backgroundColor: '#01A7B1',
+      sizes: [40, 42, 43, 45],
     },
   ];
 
@@ -53,10 +58,10 @@ const ProductCarousel = () => {
       <TouchableOpacity
         style={[styles.card, {backgroundColor: item.backgroundColor}]}
         onPress={() => {
-          RootNavigation.navigate('Product', {item});
+          RootNavigation.push('Product', {item});
         }}>
-        <Text style={styles.brandText}>{item.brand}</Text>
-        <Text style={styles.modelText}>{item.model}</Text>
+        <Text style={styles.brandText}>{item.brand.toUpperCase()}</Text>
+        <Text style={styles.modelText}>{item.model.toUpperCase()}</Text>
         <Text style={styles.priceText}>{item.price}</Text>
         <Image style={styles.modelImage} source={item.imageURL} />
         <RightArrow

@@ -1,37 +1,41 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import ProductCarousel from '../../components/product_carousel';
+import appHook from '../../hooks/app.hook';
 
 const ProductsView = () => {
+  const {useAppState, changeType} = appHook();
+  const {selectedType} = useAppState();
+
   const [activeID, setActiveID] = useState(1);
   return (
     <View style={styles.container}>
       <View style={styles.filters}>
         <Text
           style={
-            activeID === 0
+            selectedType === 'upcoming'
               ? [styles.filterText, styles.activeText]
               : styles.filterText
           }
-          onPress={() => setActiveID(0)}>
+          onPress={() => changeType('upcoming')}>
           Upcoming
         </Text>
         <Text
           style={
-            activeID === 1
+            selectedType === 'featured'
               ? [styles.filterText, {marginBottom: -20}, styles.activeText]
               : [styles.filterText, {marginBottom: -20}]
           }
-          onPress={() => setActiveID(1)}>
+          onPress={() => changeType('featured')}>
           Featured
         </Text>
         <Text
           style={
-            activeID === 2
+            selectedType === 'new'
               ? [styles.filterText, styles.activeText]
               : styles.filterText
           }
-          onPress={() => setActiveID(2)}>
+          onPress={() => changeType('new')}>
           New
         </Text>
       </View>

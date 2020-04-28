@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
-import {View, Text, ScrollView, StyleSheet} from 'react-native';
+import React from 'react';
+import {Text, ScrollView, StyleSheet} from 'react-native';
 import {brands} from '../../data';
+import appHook from '../../hooks/app.hook';
 
 const BrandsView = () => {
-  const [activeID, setActiveID] = useState(0);
+  const {useAppState, changeBrand} = appHook();
+  const {selectedBranch} = useAppState();
+
   return (
     <ScrollView
       style={styles.container}
@@ -14,11 +17,11 @@ const BrandsView = () => {
           <Text
             key={item.id}
             style={
-              item.id === activeID
+              item.name.toLowerCase() === selectedBranch.toLowerCase()
                 ? [styles.brands, styles.brandActive]
                 : styles.brands
             }
-            onPress={() => setActiveID(item.id)}>
+            onPress={() => changeBrand(item.name)}>
             {item.name}
           </Text>
         );
