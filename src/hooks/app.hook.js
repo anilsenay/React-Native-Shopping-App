@@ -12,7 +12,7 @@ const appHook = () => {
 
   const changeBrand = value => {
     appDispatch({
-      type: 'SET_BRANCH',
+      type: 'SET_BRAND',
       payload: value,
     });
   };

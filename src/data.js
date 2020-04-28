@@ -17,7 +17,7 @@ const nike = [
     imageURL: require('./assets/products/nike/nike-zoom.png'),
     backgroundColor: '#527AD1',
     sizes: [40, 42, 43, 45],
-    type: ['new'],
+    type: ['new', 'featured'],
   },
   {
     id: 2,
@@ -77,4 +77,4 @@ const products = {
   reebok: [],
 };
 
-export {brands};
+export {brands, products};

@@ -5,7 +5,7 @@ import NewIcon from '../assets/home/new.svg';
 const ItemBox = ({data}) => {
   return (
     <View style={styles.container}>
-      {data.new && (
+      {data.type.includes('new') && (
         <NewIcon width={50} height={50} fill="#F7446B" style={styles.newIcon} />
       )}
       <Image style={styles.modelImage} source={data.imageURL} />

@@ -7,7 +7,6 @@ const ProductsView = () => {
   const {useAppState, changeType} = appHook();
   const {selectedType} = useAppState();
 
-  const [activeID, setActiveID] = useState(1);
   return (
     <View style={styles.container}>
       <View style={styles.filters}>

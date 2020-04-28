@@ -5,7 +5,7 @@ import appHook from '../../hooks/app.hook';
 
 const BrandsView = () => {
   const {useAppState, changeBrand} = appHook();
-  const {selectedBranch} = useAppState();
+  const {selectedBrand} = useAppState();
 
   return (
     <ScrollView
@@ -17,7 +17,7 @@ const BrandsView = () => {
           <Text
             key={item.id}
             style={
-              item.name.toLowerCase() === selectedBranch.toLowerCase()
+              item.name.toLowerCase() === selectedBrand.toLowerCase()
                 ? [styles.brands, styles.brandActive]
                 : styles.brands
             }

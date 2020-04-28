@@ -1,16 +1,16 @@
 import React from 'react';
 
 const appInitialState = {
-  selectedBranch: 'Nike',
+  selectedBrand: 'Nike',
   selectedType: 'featured',
 };
 
 const appReducer = (state, action) => {
   switch (action.type) {
-    case 'SET_BRANCH':
+    case 'SET_BRAND':
       return {
         ...state,
-        selectedBranch: action.payload,
+        selectedBrand: action.payload,
       };
     case 'SET_TYPE':
       return {
