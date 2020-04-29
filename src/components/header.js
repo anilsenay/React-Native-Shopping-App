@@ -4,21 +4,29 @@ import ArrowIcon from '../assets/home/right-arrow.svg';
 import {FavoriteButton} from '../navigation/tabbar_icon';
 import * as RootNavigation from '../navigation/root_navigation';
 
-const Header = ({title}) => {
+const Header = ({
+  title,
+  favoriteIcon,
+  iconColor,
+  backgroundStyle,
+  textStyle,
+}) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, backgroundStyle]}>
       <TouchableOpacity
         style={styles.arrowIcon}
         onPress={() => RootNavigation.pop(1)}>
-        <ArrowIcon width={24} height={24} fill="white" />
+        <ArrowIcon width={24} height={24} fill={iconColor} />
       </TouchableOpacity>
-      <Text style={styles.title}>{title}</Text>
-      <FavoriteButton
-        width={24}
-        height={24}
-        fill="white"
-        style={styles.favoriteIcon}
-      />
+      <Text style={[styles.title, textStyle]}>{title}</Text>
+      {favoriteIcon && (
+        <FavoriteButton
+          width={24}
+          height={24}
+          fill={iconColor}
+          style={styles.favoriteIcon}
+        />
+      )}
     </View>
   );
 };
@@ -26,7 +34,6 @@ const Header = ({title}) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    marginHorizontal: 5,
     justifyContent: 'center',
     height: 60,
     width: '100%',
@@ -41,7 +48,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     padding: 10,
     top: 10,
-    left: 0,
+    left: 5,
     transform: [{rotate: '-180deg'}],
   },
   favoriteIcon: {

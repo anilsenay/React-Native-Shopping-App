@@ -35,8 +35,10 @@ const MoreView = () => {
         style={styles.itemsContainer}
         horizontal={true}
         showsHorizontalScrollIndicator={false}>
-        {moreItems.map(item => {
-          return <ItemBox key={item.id} data={item} />;
+        {moreItems.map((item, index) => {
+          if (index < 5) {
+            return <ItemBox key={item.id} data={item} />;
+          }
         })}
       </ScrollView>
     </View>
