@@ -11,6 +11,7 @@ import RightArrow from '../../assets/home/right-arrow.svg';
 import ItemBox from '../../components/item_box';
 import appHook from '../../hooks/app.hook';
 import {products} from '../../data';
+import * as RootNavigation from '../../navigation/root_navigation';
 
 const MoreView = () => {
   const {useAppState} = appHook();
@@ -19,7 +20,9 @@ const MoreView = () => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.moreTextView}>
+      <TouchableOpacity
+        style={styles.moreTextView}
+        onPress={() => RootNavigation.push('More', {moreItems})}>
         <Text style={styles.moreText}>More</Text>
         <RightArrow
           width={25}

@@ -22,7 +22,9 @@ const ProductCarousel = () => {
           RootNavigation.push('Product', {item});
         }}>
         <Text style={styles.brandText}>{item.brand.toUpperCase()}</Text>
-        <Text style={styles.modelText}>{item.model.toUpperCase()}</Text>
+        <Text style={styles.modelText} numberOfLines={1}>
+          {item.model.toUpperCase()}
+        </Text>
         <Text style={styles.priceText}>{item.price}</Text>
         <Image style={styles.modelImage} source={item.imageURL} />
         <RightArrow
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
   modelText: {
     color: 'white',
     marginTop: 5,
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 'bold',
   },
   priceText: {
@@ -81,15 +83,15 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   modelImage: {
-    width: 250,
-    height: 250,
-    transform: [{rotate: '-28deg'}],
-    marginTop: -90,
-    marginLeft: -45,
+    width: 220,
+    height: 220,
+    transform: [{rotate: '-28deg'}, {rotateY: '180deg'}],
+    marginTop: -50,
+    marginLeft: -34,
   },
   rightIcon: {
     alignSelf: 'flex-end',
-    marginTop: -16,
+    marginTop: -22,
     marginRight: 4,
   },
 });

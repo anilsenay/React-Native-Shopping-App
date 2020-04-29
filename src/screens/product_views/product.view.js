@@ -9,10 +9,15 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Header from '../../components/header';
+import PhotosView from './photos.view';
+import {images} from '../../data';
 
 const ProductView = ({item}) => {
   const [showMore, setShowMore] = useState(false);
   const [selected, setSelected] = useState();
+  const [imageID, setImageID] = useState(0);
+
+  const itemImages = images[item.id];
 
   const backgroundStyle = {
     position: 'absolute',
@@ -30,8 +35,15 @@ const ProductView = ({item}) => {
         showsVerticalScrollIndicator={false}
         style={styles.scrollViewStyle}>
         <View style={backgroundStyle} />
-        <Image source={item.imageURL} style={styles.topImage} />
-
+        <Image
+          source={{uri: itemImages[imageID]}}
+          style={
+            imageID === 0
+              ? [styles.topImage, styles.imageRotate]
+              : styles.topImage
+          }
+        />
+        <PhotosView images={itemImages} setImage={setImageID} />
         <View style={styles.details}>
           <View
             style={[styles.seperator, {backgroundColor: item.backgroundColor}]}
@@ -65,6 +77,7 @@ const ProductView = ({item}) => {
               {item.sizes.map(size => {
                 return (
                   <TouchableOpacity
+                    key={size}
                     style={
                       selected === size
                         ? [styles.sizeBox, {backgroundColor: 'black'}]
@@ -96,16 +109,20 @@ const ProductView = ({item}) => {
 const styles = StyleSheet.create({
   container: {
     height: '100%',
+    backgroundColor: 'white',
   },
   scrollViewStyle: {
     marginTop: -60,
     zIndex: -1,
   },
   topImage: {
-    width: 340,
-    height: 340,
-    marginTop: -15,
-    transform: [{rotate: '-20deg'}],
+    alignSelf: 'center',
+    width: 300,
+    height: 300,
+    marginTop: 30,
+  },
+  imageRotate: {
+    transform: [{rotate: '-20deg'}, {rotateY: '180deg'}],
   },
   details: {
     marginHorizontal: 15,

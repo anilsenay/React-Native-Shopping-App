@@ -9,7 +9,7 @@ const ItemBox = ({data}) => {
         <NewIcon width={50} height={50} fill="#F7446B" style={styles.newIcon} />
       )}
       <Image style={styles.modelImage} source={data.imageURL} />
-      <Text style={styles.title}>
+      <Text numberOfLines={2} style={styles.title}>
         {data.brand} {data.model}
       </Text>
       <Text style={styles.price}>{data.price}</Text>
@@ -19,7 +19,7 @@ const ItemBox = ({data}) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 170,
+    height: 180,
     width: 150,
     margin: 10,
     alignItems: 'center',
@@ -40,9 +40,11 @@ const styles = StyleSheet.create({
     marginBottom: -10,
     width: 140,
     height: 140,
-    transform: [{rotate: '-10deg'}],
+    transform: [{rotate: '-12deg'}, {rotateY: '180deg'}],
   },
   title: {
+    marginHorizontal: 4,
+    textAlign: 'center',
     fontWeight: 'bold',
   },
   price: {

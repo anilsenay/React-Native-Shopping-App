@@ -11,6 +11,7 @@ import BagScreen from '../screens/bag.screen';
 import FavoritesScreen from '../screens/favorites.screen';
 import AccountScreen from '../screens/account.screen';
 import ProductScreen from '../screens/product.screen';
+import MoreScreen from '../screens/more.screen';
 
 import {
   FavoriteButton,
@@ -28,6 +29,11 @@ export const GlobalNavigator = () => {
       <Stack.Screen
         name="Product"
         component={ProductScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="More"
+        component={MoreScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
