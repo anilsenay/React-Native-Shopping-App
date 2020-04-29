@@ -2,15 +2,17 @@ import React from 'react';
 import {View, SafeAreaView, StyleSheet} from 'react-native';
 import Header from '../../navigation/navigation.header';
 import cartHook from '../../hooks/cart.hook';
+import BagList from './bag_list';
 
 const BagView = () => {
   const {useCartState} = cartHook();
-  const {items} = useCartState();
-
+  const {items, total} = useCartState();
+  console.log(items);
   return (
     <SafeAreaView style={styles.container}>
-      <Header title="My Bag" noIcons={true} itemNumber={items.length || 0} />
+      <Header title="My Bag" noIcons={true} itemNumber={total || 0} />
       <View style={styles.seperator} />
+      <BagList bagItems={items} />
     </SafeAreaView>
   );
 };

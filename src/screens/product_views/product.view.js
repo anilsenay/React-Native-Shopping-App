@@ -14,7 +14,8 @@ import {images} from '../../data';
 import cartHook from '../../hooks/cart.hook';
 
 const ProductView = ({item}) => {
-  const {addToCart} = cartHook();
+  const {useCartState, addToCart, incrementItem} = cartHook();
+  const {items} = useCartState();
 
   const [showMore, setShowMore] = useState(false);
   const [selected, setSelected] = useState();
@@ -23,7 +24,9 @@ const ProductView = ({item}) => {
   const itemImages = images[item.id];
 
   const addButtonEvent = () => {
-    selected && addToCart({id: item.id, number: selected});
+    selected && items.find(x => x.id === item.id && x.number === selected)
+      ? incrementItem({id: item.id, number: selected})
+      : addToCart({id: item.id, number: selected, piece: 1});
   };
 
   const backgroundStyle = {

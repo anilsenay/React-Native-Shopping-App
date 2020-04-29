@@ -22,11 +22,25 @@ const cartHook = () => {
       payload: value,
     });
   };
+  const incrementItem = value => {
+    cartDispatch({
+      type: 'INCREMENT_ITEM',
+      payload: value,
+    });
+  };
+  const decrementItem = value => {
+    cartDispatch({
+      type: 'DECREMENT_ITEM',
+      payload: value,
+    });
+  };
 
   return {
     useCartState,
     addToCart,
     removeFromCart,
+    incrementItem,
+    decrementItem,
   };
 };
 

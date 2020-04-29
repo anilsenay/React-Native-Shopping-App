@@ -1,4 +1,12 @@
-const nike = [
+const brands = [
+  {id: 0, name: 'Nike', items: [0, 1, 2, 3, 4, 5, 6]},
+  {id: 1, name: 'Adidas', items: [7, 8, 9, 10, 11, 12, 13]},
+  {id: 2, name: 'Jordan'},
+  {id: 3, name: 'Puma'},
+  {id: 4, name: 'Reebok'},
+];
+
+const allItems = [
   {
     id: 0,
     brand: 'Nike',
@@ -90,9 +98,6 @@ const nike = [
     sizes: [40, 42, 43, 45],
     type: ['upcoming'],
   },
-];
-
-const adidas = [
   {
     id: 7,
     brand: 'Adidas',
@@ -186,22 +191,6 @@ const adidas = [
   },
 ];
 
-const brands = [
-  {id: 0, name: 'Nike'},
-  {id: 1, name: 'Adidas'},
-  {id: 2, name: 'Jordan'},
-  {id: 3, name: 'Puma'},
-  {id: 4, name: 'Reebok'},
-];
-
-const products = {
-  nike: nike,
-  adidas: adidas,
-  jordan: [],
-  puma: [],
-  reebok: [],
-};
-
 const images = {
   0: [
     'https://images.footlocker.com/is/image/EBFL2/630002_a1?wid=630&hei=630&fmt=png-alpha',
@@ -281,4 +270,4 @@ const images = {
   ],
 };
 
-export {brands, products, images};
+export {brands, images, allItems};

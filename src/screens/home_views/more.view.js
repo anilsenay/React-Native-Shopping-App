@@ -10,13 +10,18 @@ import {
 import RightArrow from '../../assets/home/right-arrow.svg';
 import ItemBox from '../../components/item_box';
 import appHook from '../../hooks/app.hook';
-import {products} from '../../data';
+import {brands, allItems} from '../../data';
 import * as RootNavigation from '../../navigation/root_navigation';
 
 const MoreView = () => {
   const {useAppState} = appHook();
   const {selectedBrand} = useAppState();
-  const moreItems = products[selectedBrand.toLowerCase()];
+
+  const itemsOfBrand = brands.filter(
+    x => x.name.toLowerCase() === selectedBrand.toLowerCase(),
+  )[0].items;
+
+  const moreItems = itemsOfBrand.map(id => allItems[id]);
 
   return (
     <View style={styles.container}>

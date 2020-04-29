@@ -4,15 +4,19 @@ import Carousel from 'react-native-snap-carousel';
 import RightArrow from '../assets/home/right-arrow.svg';
 import * as RootNavigation from '../navigation/root_navigation';
 import appHook from '../hooks/app.hook';
-import {products} from '../data';
+import {brands, allItems} from '../data';
 
 const ProductCarousel = () => {
   const {useAppState} = appHook();
   const {selectedBrand, selectedType} = useAppState();
 
-  const carouselItems = products[selectedBrand.toLowerCase()].filter(item =>
-    item.type.includes(selectedType),
-  );
+  const itemsOfBrand = brands.filter(
+    x => x.name.toLowerCase() === selectedBrand.toLowerCase(),
+  )[0].items;
+
+  const carouselItems = itemsOfBrand
+    .map(id => allItems[id])
+    .filter(item => item.type.includes(selectedType));
 
   const renderItem = ({item, index}) => {
     return (
