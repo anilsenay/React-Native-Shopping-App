@@ -11,8 +11,13 @@ import {
 import Header from '../../components/header';
 import PhotosView from './photos.view';
 import {images} from '../../data';
+import cartHook from '../../hooks/cart.hook';
 
 const ProductView = ({item}) => {
+  const {useCartState, addToCart} = cartHook();
+  const {items} = useCartState();
+  console.log(items);
+
   const [showMore, setShowMore] = useState(false);
   const [selected, setSelected] = useState();
   const [imageID, setImageID] = useState(0);
@@ -97,7 +102,9 @@ const ProductView = ({item}) => {
               })}
             </ScrollView>
           </View>
-          <TouchableOpacity style={styles.addButton}>
+          <TouchableOpacity
+            style={styles.addButton}
+            onPress={() => addToCart(item.id)}>
             <Text style={styles.addText}>ADD TO BAG</Text>
           </TouchableOpacity>
         </View>
