@@ -16,7 +16,7 @@ const MoreView = ({items}) => {
         contentContainerStyle={styles.scrollContainer}
         showsVerticalScrollIndicator={false}>
         {items.map(item => {
-          return <ItemBox key={item.id} data={item} />;
+          return <ItemBox key={item.id} item={item} />;
         })}
       </ScrollView>
     </SafeAreaView>

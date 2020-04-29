@@ -1,19 +1,24 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import NewIcon from '../assets/home/new.svg';
+import * as RootNavigation from '../navigation/root_navigation';
 
-const ItemBox = ({data}) => {
+const ItemBox = ({item}) => {
   return (
-    <View style={styles.container}>
-      {data.type.includes('new') && (
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => {
+        RootNavigation.push('Product', {item});
+      }}>
+      {item.type.includes('new') && (
         <NewIcon width={50} height={50} fill="#F7446B" style={styles.newIcon} />
       )}
-      <Image style={styles.modelImage} source={data.imageURL} />
+      <Image style={styles.modelImage} source={item.imageURL} />
       <Text numberOfLines={2} style={styles.title}>
-        {data.brand} {data.model}
+        {item.brand} {item.model}
       </Text>
-      <Text style={styles.price}>{data.price}</Text>
-    </View>
+      <Text style={styles.price}>{item.price}</Text>
+    </TouchableOpacity>
   );
 };
 

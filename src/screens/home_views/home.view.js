@@ -3,11 +3,13 @@ import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import BrandsView from './brands.view';
 import ProductsView from './products.view';
 import MoreView from './more.view';
+import Header from '../../navigation/navigation.header';
 
 const HomeView = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
+        <Header title="Discover" />
         <BrandsView />
         <ProductsView />
         <MoreView />
@@ -22,7 +24,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     height: '100%',
     backgroundColor: 'white',
-    paddingTop: 50,
   },
 });
 

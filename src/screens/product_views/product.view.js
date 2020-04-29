@@ -14,15 +14,17 @@ import {images} from '../../data';
 import cartHook from '../../hooks/cart.hook';
 
 const ProductView = ({item}) => {
-  const {useCartState, addToCart} = cartHook();
-  const {items} = useCartState();
-  console.log(items);
+  const {addToCart} = cartHook();
 
   const [showMore, setShowMore] = useState(false);
   const [selected, setSelected] = useState();
   const [imageID, setImageID] = useState(0);
 
   const itemImages = images[item.id];
+
+  const addButtonEvent = () => {
+    selected && addToCart({id: item.id, number: selected});
+  };
 
   const backgroundStyle = {
     position: 'absolute',
@@ -102,9 +104,7 @@ const ProductView = ({item}) => {
               })}
             </ScrollView>
           </View>
-          <TouchableOpacity
-            style={styles.addButton}
-            onPress={() => addToCart(item.id)}>
+          <TouchableOpacity style={styles.addButton} onPress={addButtonEvent}>
             <Text style={styles.addText}>ADD TO BAG</Text>
           </TouchableOpacity>
         </View>

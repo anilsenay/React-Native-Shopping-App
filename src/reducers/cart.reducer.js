@@ -7,7 +7,7 @@ const cartReducer = (state, action) => {
     case 'ADD_ITEM':
       return {
         ...state,
-        items: state.items.concat([action.payload]),
+        items: state.items.concat(action.payload),
       };
     case 'DELETE_ITEM':
       return {

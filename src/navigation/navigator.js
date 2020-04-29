@@ -1,10 +1,8 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
-import {options, productOptions} from './navigation.options';
 
 import Home from '../screens/home.screen';
 import BagScreen from '../screens/bag.screen';
@@ -25,7 +23,11 @@ const Stack = createStackNavigator();
 export const GlobalNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={TabScreens} options={options} />
+      <Stack.Screen
+        name="Home"
+        component={TabScreens}
+        options={{headerShown: false}}
+      />
       <Stack.Screen
         name="Product"
         component={ProductScreen}
