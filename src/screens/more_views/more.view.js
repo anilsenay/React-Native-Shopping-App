@@ -29,10 +29,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   scrollContainer: {
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     flexWrap: 'wrap',
     flexDirection: 'row',
     paddingBottom: 20,
+    marginHorizontal: 10,
   },
 });
 
