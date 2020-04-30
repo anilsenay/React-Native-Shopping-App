@@ -11,6 +11,7 @@ const MoreView = ({items}) => {
         iconColor={'black'}
         backgroundStyle={{backgroundColor: 'white'}}
         textStyle={{color: 'black'}}
+        favoriteIcon={false}
       />
       <ScrollView
         contentContainerStyle={styles.scrollContainer}

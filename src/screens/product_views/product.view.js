@@ -12,6 +12,11 @@ import Header from '../../components/header';
 import PhotosView from './photos.view';
 import {images} from '../../data';
 import cartHook from '../../hooks/cart.hook';
+import {
+  addBagMsg,
+  incrementMsg,
+  chooseNumberMsg,
+} from '../../consts/popup_messages';
 
 const ProductView = ({item}) => {
   const {useCartState, addToCart, incrementItem} = cartHook();
@@ -25,8 +30,24 @@ const ProductView = ({item}) => {
 
   const addButtonEvent = () => {
     selected && items.find(x => x.id === item.id && x.number === selected)
-      ? incrementItem({id: item.id, number: selected})
-      : addToCart({id: item.id, number: selected, piece: 1, price: item.price});
+      ? incrementEvent()
+      : addEvent();
+  };
+
+  const addEvent = () => {
+    if (selected > 0) {
+      addToCart({id: item.id, number: selected, piece: 1, price: item.price});
+      addBagMsg(selected);
+    } else {
+      chooseNumberMsg();
+    }
+  };
+
+  const incrementEvent = () => {
+    if (selected > 0) {
+      incrementItem({id: item.id, number: selected});
+      incrementMsg(selected);
+    }
   };
 
   const backgroundStyle = {
