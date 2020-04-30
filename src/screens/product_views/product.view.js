@@ -6,49 +6,19 @@ import {
   SafeAreaView,
   ScrollView,
   Image,
-  TouchableOpacity,
 } from 'react-native';
 import Header from '../../components/header';
 import PhotosView from './photos.view';
 import {images} from '../../data';
-import cartHook from '../../hooks/cart.hook';
-import {
-  addBagMsg,
-  incrementMsg,
-  chooseNumberMsg,
-} from '../../consts/popup_messages';
+
+import SizesView from './sizes_view';
 
 const ProductView = ({item}) => {
-  const {useCartState, addToCart, incrementItem} = cartHook();
-  const {items} = useCartState();
 
   const [showMore, setShowMore] = useState(false);
-  const [selected, setSelected] = useState();
   const [imageID, setImageID] = useState(0);
 
   const itemImages = images[item.id];
-
-  const addButtonEvent = () => {
-    selected && items.find(x => x.id === item.id && x.number === selected)
-      ? incrementEvent()
-      : addEvent();
-  };
-
-  const addEvent = () => {
-    if (selected > 0) {
-      addToCart({id: item.id, number: selected, piece: 1, price: item.price});
-      addBagMsg(selected);
-    } else {
-      chooseNumberMsg();
-    }
-  };
-
-  const incrementEvent = () => {
-    if (selected > 0) {
-      incrementItem({id: item.id, number: selected});
-      incrementMsg(selected);
-    }
-  };
 
   const backgroundStyle = {
     position: 'absolute',
@@ -104,38 +74,7 @@ const ProductView = ({item}) => {
             onPress={() => setShowMore(!showMore)}>
             {showMore ? 'LESS' : 'MORE'} DETAILS
           </Text>
-          <View style={styles.sizesView}>
-            <Text style={styles.sizeText}>Size</Text>
-            <ScrollView
-              style={styles.sizeScroll}
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}>
-              {item.sizes.map(size => {
-                return (
-                  <TouchableOpacity
-                    key={size}
-                    style={
-                      selected === size
-                        ? [styles.sizeBox, {backgroundColor: 'black'}]
-                        : styles.sizeBox
-                    }
-                    onPress={() => setSelected(size)}>
-                    <Text
-                      style={
-                        selected === size
-                          ? [styles.sizeNumber, {color: 'white'}]
-                          : styles.sizeNumber
-                      }>
-                      {size}
-                    </Text>
-                  </TouchableOpacity>
-                );
-              })}
-            </ScrollView>
-          </View>
-          <TouchableOpacity style={styles.addButton} onPress={addButtonEvent}>
-            <Text style={styles.addText}>ADD TO BAG</Text>
-          </TouchableOpacity>
+          <SizesView item={item} />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -194,43 +133,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textDecorationLine: 'underline',
     letterSpacing: 2,
-  },
-  sizesView: {
-    marginVertical: 30,
-  },
-  sizeText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  sizeScroll: {
-    height: 70,
-    width: '100%',
-  },
-  sizeBox: {
-    marginTop: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 50,
-    width: 100,
-    marginRight: 15,
-    borderWidth: 1,
-    borderColor: '#e0e0e0',
-    borderRadius: 4,
-  },
-  sizeNumber: {
-    fontSize: 18,
-  },
-  addButton: {
-    height: 50,
-    backgroundColor: '#fa3d67',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 6,
-    marginBottom: 30,
-  },
-  addText: {
-    color: 'white',
-    fontWeight: 'bold',
   },
 });
 
