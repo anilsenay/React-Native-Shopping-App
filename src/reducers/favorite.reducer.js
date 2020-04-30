@@ -4,7 +4,6 @@ const favoriteInitialState = {
 };
 
 const favoriteReducer = (state, action) => {
-  console.log('state ' + state);
   switch (action.type) {
     case 'ADD_FAVORITE':
       return {
@@ -15,7 +14,7 @@ const favoriteReducer = (state, action) => {
     case 'DELETE_FAVORITE':
       return {
         ...state,
-        items: state.items.filter(item => item.id !== action.payload),
+        items: state.items.filter(id => id !== action.payload),
         total: state.total - 1,
       };
     default:

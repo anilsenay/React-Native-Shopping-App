@@ -18,7 +18,7 @@ const favoriteHook = () => {
   };
   const removeFavorite = value => {
     favoriteDispatch({
-      type: 'REMOVE_FAVORITE',
+      type: 'DELETE_FAVORITE',
       payload: value,
     });
   };

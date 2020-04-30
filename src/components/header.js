@@ -1,8 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import ArrowIcon from '../assets/home/right-arrow.svg';
-import {FavoriteButton} from '../navigation/tabbar_icon';
+import {FavoriteButton, FavoritedButton} from '../navigation/tabbar_icon';
 import * as RootNavigation from '../navigation/root_navigation';
+import favoriteHook from '../hooks/favorite.hook';
 
 const Header = ({
   title,
@@ -10,7 +11,13 @@ const Header = ({
   iconColor,
   backgroundStyle,
   textStyle,
+  id,
 }) => {
+  const {useFavoriteState, addToFavorite, removeFavorite} = favoriteHook();
+  const {items} = useFavoriteState();
+
+  const isFavorite = items.includes(id);
+
   return (
     <View style={[styles.container, backgroundStyle]}>
       <TouchableOpacity
@@ -19,12 +26,21 @@ const Header = ({
         <ArrowIcon width={24} height={24} fill={iconColor} />
       </TouchableOpacity>
       <Text style={[styles.title, textStyle]}>{title}</Text>
-      {favoriteIcon && (
+      {favoriteIcon && isFavorite ? (
+        <FavoritedButton
+          width={24}
+          height={24}
+          fill={iconColor}
+          style={styles.favoriteIcon}
+          onPress={() => removeFavorite(id)}
+        />
+      ) : (
         <FavoriteButton
           width={24}
           height={24}
           fill={iconColor}
           style={styles.favoriteIcon}
+          onPress={() => addToFavorite(id)}
         />
       )}
     </View>

@@ -40,7 +40,12 @@ const ProductView = ({item}) => {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <Header title={item.brand} favoriteIcon={true} iconColor="white" />
+      <Header
+        title={item.brand}
+        favoriteIcon={true}
+        iconColor="white"
+        id={item.id}
+      />
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.scrollViewStyle}>
