@@ -4,6 +4,7 @@ import ArrowIcon from '../assets/home/right-arrow.svg';
 import {FavoriteButton, FavoritedButton} from '../navigation/tabbar_icon';
 import * as RootNavigation from '../navigation/root_navigation';
 import favoriteHook from '../hooks/favorite.hook';
+import {favorited, removeFavorited} from '../consts/popup_messages';
 
 const Header = ({
   title,
@@ -18,6 +19,16 @@ const Header = ({
 
   const isFavorite = items.includes(id);
 
+  const favoriteEvent = () => {
+    if (isFavorite) {
+      removeFavorite(id);
+      removeFavorited(); // pop up message
+    } else {
+      addToFavorite(id);
+      favorited(); // pop up message
+    }
+  };
+
   return (
     <View style={[styles.container, backgroundStyle]}>
       <TouchableOpacity
@@ -26,23 +37,24 @@ const Header = ({
         <ArrowIcon width={24} height={24} fill={iconColor} />
       </TouchableOpacity>
       <Text style={[styles.title, textStyle]}>{title}</Text>
-      {favoriteIcon && isFavorite ? (
-        <FavoritedButton
-          width={24}
-          height={24}
-          fill={iconColor}
-          style={styles.favoriteIcon}
-          onPress={() => removeFavorite(id)}
-        />
-      ) : (
-        <FavoriteButton
-          width={24}
-          height={24}
-          fill={iconColor}
-          style={styles.favoriteIcon}
-          onPress={() => addToFavorite(id)}
-        />
-      )}
+      {favoriteIcon &&
+        (isFavorite ? (
+          <FavoritedButton
+            width={24}
+            height={24}
+            fill={iconColor}
+            style={styles.favoriteIcon}
+            onPress={favoriteEvent}
+          />
+        ) : (
+          <FavoriteButton
+            width={24}
+            height={24}
+            fill={iconColor}
+            style={styles.favoriteIcon}
+            onPress={favoriteEvent}
+          />
+        ))}
     </View>
   );
 };
