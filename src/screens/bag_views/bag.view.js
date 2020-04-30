@@ -18,7 +18,6 @@ const BagView = () => {
     .map(item => item.price * item.piece)
     .reduce((a, b) => a + b, 0);
 
-  console.log(items);
   return (
     <SafeAreaView style={styles.container}>
       <Header title="My Bag" noIcons={true} itemNumber={total || 0} />

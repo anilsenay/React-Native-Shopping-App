@@ -7,10 +7,8 @@ const BagList = ({bagItems}) => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       {bagItems.map(item => {
-        console.log(item);
         const piece = item.piece;
         const itemData = allItems.filter(x => x.id === item.id)[0];
-        console.log(itemData);
         return (
           <CartItem
             key={item.id + ' ' + item.number}
