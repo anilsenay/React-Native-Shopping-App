@@ -11,7 +11,14 @@ const BagList = ({bagItems}) => {
         const piece = item.piece;
         const itemData = allItems.filter(x => x.id === item.id)[0];
         console.log(itemData);
-        return <CartItem item={itemData} number={item.number} piece={piece} />;
+        return (
+          <CartItem
+            key={item.id + item.number}
+            item={itemData}
+            number={item.number}
+            piece={piece}
+          />
+        );
       })}
     </ScrollView>
   );
@@ -21,6 +28,7 @@ const styles = StyleSheet.create({
   container: {
     height: '100%',
     width: '100%',
+    marginBottom: 70,
   },
   card: {
     flexDirection: 'row',

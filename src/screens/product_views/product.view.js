@@ -26,7 +26,7 @@ const ProductView = ({item}) => {
   const addButtonEvent = () => {
     selected && items.find(x => x.id === item.id && x.number === selected)
       ? incrementItem({id: item.id, number: selected})
-      : addToCart({id: item.id, number: selected, piece: 1});
+      : addToCart({id: item.id, number: selected, piece: 1, price: item.price});
   };
 
   const backgroundStyle = {
@@ -62,7 +62,7 @@ const ProductView = ({item}) => {
             <Text style={styles.modelText}>{item.model}</Text>
             <Text
               style={[styles.priceText, {borderColor: item.backgroundColor}]}>
-              {item.price}
+              {item.price} TL
             </Text>
           </View>
           <Text numberOfLines={showMore ? 0 : 3} style={styles.description}>

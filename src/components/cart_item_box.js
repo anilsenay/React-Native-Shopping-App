@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import CartButton from './cart_button';
 import cartHook from '../hooks/cart.hook';
 
@@ -26,7 +26,7 @@ const CartItem = ({piece, item, number}) => {
       </View>
       <View style={styles.details}>
         <Text>{item.model.toUpperCase()}</Text>
-        <Text style={styles.priceText}>{item.price}</Text>
+        <Text style={styles.priceText}>{item.price} TL</Text>
         <View style={styles.buttonView}>
           <CartButton type="decrement" onPress={decrementEvent} />
           <Text style={styles.pieceText}>{piece}</Text>

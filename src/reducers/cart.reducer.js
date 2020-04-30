@@ -4,6 +4,7 @@ const cartInitialState = {
 };
 
 const cartReducer = (state, action) => {
+  console.log('state ' + state);
   const {id, number} = action.payload;
   switch (action.type) {
     case 'ADD_ITEM':

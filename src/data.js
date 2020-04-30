@@ -11,7 +11,7 @@ const allItems = [
     id: 0,
     brand: 'Nike',
     model: 'Kyrie 6',
-    price: '129.00 TL',
+    price: '129.20',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/630002_a1?wid=630&hei=630&fmt=png-alpha',
@@ -24,7 +24,7 @@ const allItems = [
     id: 1,
     brand: 'Nike',
     model: 'Air-Max 270',
-    price: '129.00 TL',
+    price: '129.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/H8050001_a1?wid=630&hei=630&fmt=png-alpha',
@@ -37,7 +37,7 @@ const allItems = [
     id: 2,
     brand: 'Nike',
     model: 'Air-Max 90',
-    price: '129.00 TL',
+    price: '129.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/J1285019_a1?wid=630&hei=630&fmt=png-alpha',
@@ -50,7 +50,7 @@ const allItems = [
     id: 3,
     brand: 'Nike',
     model: 'Air-Max React',
-    price: '129.00 TL',
+    price: '129.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/O4971001_a1?wid=640&hei=640&fmt=png-alpha',
@@ -63,7 +63,7 @@ const allItems = [
     id: 4,
     brand: 'Nike',
     model: 'PG 4',
-    price: '129.00 TL',
+    price: '129.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/5079100_a1?wid=640&hei=640&fmt=png-alpha',
@@ -76,7 +76,7 @@ const allItems = [
     id: 5,
     brand: 'Nike',
     model: "Air-Max Uptempo '95",
-    price: '129.00 TL',
+    price: '129.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/K0892101_a1?wid=630&hei=630&fmt=png-alpha',
@@ -89,7 +89,7 @@ const allItems = [
     id: 6,
     brand: 'Nike',
     model: 'LeBron Soldier XIII SFG',
-    price: '839.00 TL',
+    price: '839.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/2918100_a1?wid=640&hei=640&fmt=png-alpha',
@@ -102,7 +102,7 @@ const allItems = [
     id: 7,
     brand: 'Adidas',
     model: 'Ultraboost',
-    price: '129.00 TL',
+    price: '129.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/EG8102_a1?wid=640&hei=640&fmt=png-alpha',
@@ -115,7 +115,7 @@ const allItems = [
     id: 8,
     brand: 'Adidas',
     model: 'Ultraboost 20',
-    price: '129.00 TL',
+    price: '129.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/EF1043_a1?wid=640&hei=640&fmt=png-alpha',
@@ -128,7 +128,7 @@ const allItems = [
     id: 9,
     brand: 'Adidas',
     model: 'Ultraboost All Terrain',
-    price: '129.00 TL',
+    price: '129.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/EG8099_a1?wid=640&hei=640&fmt=png-alpha',
@@ -141,7 +141,7 @@ const allItems = [
     id: 10,
     brand: 'Adidas',
     model: 'Terrex Agravic Flow',
-    price: '129.00 TL',
+    price: '129.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/G26101_a1?wid=630&hei=630&fmt=png-alpha',
@@ -154,7 +154,7 @@ const allItems = [
     id: 11,
     brand: 'Adidas',
     model: 'PureBoost DPR',
-    price: '129.00 TL',
+    price: '129.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/BB6294_a1?wid=640&hei=640&fmt=png-alpha',
@@ -167,7 +167,7 @@ const allItems = [
     id: 12,
     brand: 'Adidas',
     model: 'Pharrell Williams Human Race Solar',
-    price: '129.00 TL',
+    price: '129.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/EF2378G_a1?wid=630&hei=630&fmt=png-alpha',
@@ -180,7 +180,7 @@ const allItems = [
     id: 13,
     brand: 'Adidas',
     model: 'Harden Vol. 4',
-    price: '839.00 TL',
+    price: '839.00',
     imageURL: {
       uri:
         'https://images.footlocker.com/is/image/EBFL2/EH2456_a1?wid=630&hei=630&fmt=png-alpha',

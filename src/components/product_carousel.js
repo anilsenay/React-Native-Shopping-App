@@ -29,7 +29,7 @@ const ProductCarousel = () => {
         <Text style={styles.modelText} numberOfLines={1}>
           {item.model.toUpperCase()}
         </Text>
-        <Text style={styles.priceText}>{item.price}</Text>
+        <Text style={styles.priceText}>{item.price} TL</Text>
         <Image style={styles.modelImage} source={item.imageURL} />
         <RightArrow
           width={25}

@@ -17,7 +17,7 @@ const ItemBox = ({item}) => {
       <Text numberOfLines={2} style={styles.title}>
         {item.brand} {item.model}
       </Text>
-      <Text style={styles.price}>{item.price}</Text>
+      <Text style={styles.price}>{item.price} TL</Text>
     </TouchableOpacity>
   );
 };
