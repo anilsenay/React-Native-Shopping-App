@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ScrollView, StyleSheet, Image} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 import {allItems} from '../../data';
 import CartItem from '../../components/cart_item_box';
 
@@ -13,7 +13,7 @@ const BagList = ({bagItems}) => {
         console.log(itemData);
         return (
           <CartItem
-            key={item.id + item.number}
+            key={item.id + ' ' + item.number}
             item={itemData}
             number={item.number}
             piece={piece}

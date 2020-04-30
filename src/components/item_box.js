@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import NewIcon from '../assets/home/new.svg';
 import * as RootNavigation from '../navigation/root_navigation';
 

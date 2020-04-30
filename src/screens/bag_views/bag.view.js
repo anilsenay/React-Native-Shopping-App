@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     height: 1,
     width: '100%',
     backgroundColor: '#f4f4f4',
+    marginTop: 6,
   },
   scrollContainer: {
     justifyContent: 'center',
