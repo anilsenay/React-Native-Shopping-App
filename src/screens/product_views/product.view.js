@@ -14,7 +14,6 @@ import {images} from '../../data';
 import SizesView from './sizes_view';
 
 const ProductView = ({item}) => {
-
   const [showMore, setShowMore] = useState(false);
   const [imageID, setImageID] = useState(0);
 
