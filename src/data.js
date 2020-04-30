@@ -219,7 +219,7 @@ const allItems = [
     },
     backgroundColor: whiteGrey,
     sizes: [41, 42, 43, 45],
-    type: ['new, featured'],
+    type: ['new', 'featured'],
   },
   {
     id: 15,
@@ -232,7 +232,7 @@ const allItems = [
     },
     backgroundColor: red,
     sizes: [40, 41, 44, 45],
-    type: ['new'],
+    type: ['new', 'featured'],
   },
   {
     id: 16,
@@ -245,7 +245,7 @@ const allItems = [
     },
     backgroundColor: darkRed,
     sizes: [40, 41, 44, 45],
-    type: ['featured'],
+    type: ['featured', 'upcoming'],
   },
   {
     id: 17,
@@ -258,7 +258,7 @@ const allItems = [
     },
     backgroundColor: soldier,
     sizes: [40, 42, 43, 45],
-    type: ['new, featured'],
+    type: ['new', 'featured'],
   },
   {
     id: 18,
@@ -271,7 +271,7 @@ const allItems = [
     },
     backgroundColor: black,
     sizes: [41, 42, 43, 44],
-    type: ['new, featured'],
+    type: ['new', 'featured'],
   },
   {
     id: 19,
@@ -284,7 +284,7 @@ const allItems = [
     },
     backgroundColor: green,
     sizes: [40, 42, 43, 44],
-    type: ['new'],
+    type: ['new', 'upcoming'],
   },
   {
     id: 20,
@@ -297,7 +297,7 @@ const allItems = [
     },
     backgroundColor: yellow,
     sizes: [38, 41, 42, 43],
-    type: ['featured, upcoming'],
+    type: ['featured', 'upcoming'],
   },
   {
     id: 21,
@@ -310,7 +310,7 @@ const allItems = [
     },
     backgroundColor: blue,
     sizes: [40, 42, 43, 44, 45],
-    type: ['new, featured'],
+    type: ['featured'],
   },
   {
     id: 22,
@@ -323,7 +323,7 @@ const allItems = [
     },
     backgroundColor: grey,
     sizes: [40, 41, 42, 43, 45],
-    type: ['featured'],
+    type: ['featured', 'new'],
   },
   {
     id: 23,
@@ -336,7 +336,7 @@ const allItems = [
     },
     backgroundColor: lightBlue,
     sizes: [40, 42, 43, 45],
-    type: ['new, featured'],
+    type: ['new', 'featured'],
   },
   {
     id: 24,
@@ -362,7 +362,7 @@ const allItems = [
     },
     backgroundColor: blue,
     sizes: [40, 41, 42, 43, 44, 45],
-    type: ['upcoming, featured'],
+    type: ['upcoming', 'featured'],
   },
   {
     id: 26,
@@ -375,7 +375,7 @@ const allItems = [
     },
     backgroundColor: whiteGrey,
     sizes: [40, 41, 42, 43, 45],
-    type: ['new, featured'],
+    type: ['new', 'featured'],
   },
   {
     id: 27,
@@ -388,7 +388,7 @@ const allItems = [
     },
     backgroundColor: whiteGrey,
     sizes: [40, 41, 43, 45],
-    type: ['new, featured'],
+    type: ['new', 'featured'],
   },
   {
     id: 28,
@@ -440,7 +440,7 @@ const allItems = [
     },
     backgroundColor: darkRed,
     sizes: [40, 42, 43, 44],
-    type: ['new, featured'],
+    type: ['new', 'featured'],
   },
   {
     id: 32,
@@ -453,7 +453,7 @@ const allItems = [
     },
     backgroundColor: blue,
     sizes: [40, 41, 43, 45],
-    type: ['upcoming, featured'],
+    type: ['upcoming', 'featured'],
   },
 ];
 
