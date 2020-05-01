@@ -1,7 +1,7 @@
 # React-Native-Shopping-App
 
-A shopping app created with React Native. (Worked on Android, need fixes for IOS)
-Inspired from: https://dribbble.com/shots/6733935-Bright-App-UI-Kit
+A shopping app created with React Native. (Worked on Android, need fixes for IOS)  
+Inspired from: https://dribbble.com/shots/6733935-Bright-App-UI-Kit  
 (Please do not use for profit without buy it, this project is only for personal use.)
 
 ![Shopping App](https://i.ibb.co/2KHh4RT/shopping-small.jpg)
